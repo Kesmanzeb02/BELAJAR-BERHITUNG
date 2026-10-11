@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#236b57">
+  <meta name="description"
+        content="Aplikasi belajar luring untuk siswa SD.">
+  <title>RuangBelajar 3T</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <div class="logo">R3T</div>
+      <div>
+        <h1>RuangBelajar 3T</h1>
+        <p>Belajar di mana saja 🌱</p>
+      </div>
+    </div>
+    <span id="connection" class="status">Memeriksa...</span>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <p class="eyebrow">TEMAN BELAJAR KAMU</p>
+      <h2>Halo, Sobat Belajar! 👋</h2>
+      <p>
+        Yuk, belajar sedikit demi sedikit.
+        Kamu bisa membuka materi dan latihan
+        meskipun tidak ada internet.
+      </p>
+    </section>
+
+    <section class="progress-card">
+      <div class="progress-heading">
+        <div>
+          <h3>Perjalanan belajarmu</h3>
+          <p>Terus berlatih, ya!</p>
+        </div>
+        <span id="progressPercent">0%</span>
+      </div>
+      <div class="progress-track">
+        <div id="progressBar" class="progress-fill"></div>
+      </div>
+      <p id="progressText">Belum ada latihan selesai.</p>
+    </section>
+
+    <section class="section">
+      <h2>📚 Pilih kegiatan</h2>
+      <div class="subject-grid">
+        <button class="subject math" data-view="lesson">
+          <span class="subject-icon">🔢</span>
+          <strong>Belajar Matematika</strong>
+          <small>Penjumlahan dan pecahan</small>
+        </button>
+        <button class="subject quiz" data-view="quiz">
+          <span class="subject-icon">🎯</span>
+          <strong>Latihan Soal</strong>
+          <small>Uji pemahamanmu</small>
+        </button>
+        <button class="subject tutor" data-view="tutor">
+          <span class="subject-icon">💬</span>
+          <strong>Tanya Tutor</strong>
+          <small>Tanyakan materi</small>
+        </button>
+        <button class="subject result" data-view="result">
+          <span class="subject-icon">🏆</span>
+          <strong>Hasil Belajar</strong>
+          <small>Lihat perkembanganmu</small>
+        </button>
+      </div>
+    </section>
+
+    <section id="lesson" class="panel hidden">
+      <h2>🔢 Belajar Pecahan</h2>
+      <p>
+        Pecahan menunjukkan bagian dari suatu
+        benda atau keseluruhan.
+      </p>
+      <div class="example">
+        <div class="fraction">1/2</div>
+        <div>
+          <strong>Satu per dua</strong>
+          <p>Bayangkan sebuah roti dibagi menjadi
+          dua bagian sama besar. Satu bagian
+          adalah 1/2 dari roti tersebut.</p>
+        </div>
+      </div>
+      <div class="example">
+        <div class="fraction">1/4</div>
+        <div>
+          <strong>Satu per empat</strong>
+          <p>Satu bagian dari empat bagian sama
+          besar ditulis sebagai 1/4.</p>
+        </div>
+      </div>
+      <button class="primary" data-view="quiz">
+        Coba latihan soal →
+      </button>
+    </section>
+
+    <section id="quiz" class="panel hidden">
+      <h2>🎯 Latihan Matematika</h2>
+      <p id="questionCount"></p>
+      <h3 id="question"></h3>
+      <div id="answers" class="answers"></div>
+      <p id="feedback" aria-live="polite"></p>
+      <button id="nextQuestion" class="primary hidden">
+        Soal berikutnya →
+      </button>
+    </section>
+
+    <section id="tutor" class="panel hidden">
+      <h2>💬 Tanya Tutor Belajar</h2>
+      <p class="note">
+        Versi awal ini menjawab berdasarkan materi
+        yang sudah disiapkan, bukan AI generatif.
+      </p>
+      <div id="chatMessages" class="chat-messages"
+           aria-live="polite">
+        <div class="bubble bot">
+          Halo! Aku bisa membantu menjelaskan
+          pecahan dan penjumlahan. Apa yang ingin
+          kamu pelajari?
+        </div>
+      </div>
+      <form id="tutorForm">
+        <label for="tutorInput">Tulis pertanyaanmu</label>
+        <div class="chat-input">
+          <input id="tutorInput" type="text"
+                 maxlength="250"
+                 placeholder="Contoh: apa itu pecahan?"
+                 autocomplete="off" required>
+          <button class="primary" type="submit">
+            Kirim
+          </button>
+        </div>
+      </form>
+    </section>
+
+    <section id="result" class="panel hidden">
+      <h2>🏆 Hasil Belajarmu</h2>
+      <div class="result-number" id="totalScore">0</div>
+      <p>Total jawaban benar</p>
+      <p id="resultDetail"></p>
+      <button class="primary" data-view="quiz">
+        Berlatih lagi
+      </button>
+    </section>
+
+    <footer>
+      <p>RuangBelajar 3T · Belajar, tumbuh, dan maju bersama.</p>
+      <small>Prototipe pendidikan untuk uji coba.</small>
+    </footer>
+  </main>
+
+  <nav class="bottom-nav">
+    <button data-view="home">🏠<span>Beranda</span></button>
+    <button data-view="lesson">📚<span>Materi</span></button>
+    <button data-view="quiz">✏️<span>Latihan</span></button>
+    <button data-view="tutor">💬<span>Tutor</span></button>
+  </nav>
+
+  <script src="app.js"></script>
+</body>
+</html>

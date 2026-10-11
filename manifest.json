@@ -1,0 +1,11 @@
+{
+  "name": "RuangBelajar 3T",
+  "short_name": "Belajar 3T",
+  "description": "Aplikasi belajar luring untuk siswa SD",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#fffaf0",
+  "theme_color": "#236b57",
+  "lang": "id"
+}
